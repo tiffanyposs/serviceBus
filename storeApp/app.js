@@ -7,8 +7,6 @@ var bus = require('servicebus').bus();
 
 var logger = require('morgan');
 
-
-
 app.use(bodyParser.json());       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
@@ -17,15 +15,26 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 app.use(logger('dev'));
 
  
-app.use(express.static('public/views'));
+// app.use(express.static('public/views'));
+app.use(express.static('public/views', {
+    extensions: ['html', 'htm'],
+}));
+app.use(express.static('public/css'));
 app.use(express.static('public/javascript'));
 app.use(express.static('public/data'));
 
 
 app.get('/', function (req, res) {
   console.log('get content')
-  bus.send('my.event', data);
-  res.send('index.html');
+  // bus.send('my.event', data);
+  res.send(index);
+});
+
+app.get('/:id', function (req, res) {
+  var filename = req.params.id;
+  console.log(filename)
+  // bus.send('my.event', data);
+  res.render(req.params.id);
 });
 
 // app.post('/send-event', function(req, res) {
