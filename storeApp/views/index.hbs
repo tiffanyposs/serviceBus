@@ -2,13 +2,17 @@
 
   {{#if products.data }}
     {{#each products.data}}
-     <div class="product-tile">
+     <div class="product-tile flex-column">
     	<img src="{{imagePath}}" alt="{{name}}">
         <h3>{{ name }}</h3>
         <p>${{ price }}</p>
-        <a class="show-hide-description" href="#">Read More</a>
-        <a class="hide show-hide-description" href="#">Read Less</a>
-        <p class="description hide">{{ description }}</p>
+        <a class="show-hide-description link-shadow" href="#">Read More</a>
+        <!-- <a class="hide show-hide-description link-shadow" href="#">Read Less</a> -->
+        <p class="description hide">
+          {{ description }}
+          <a class="show-hide-description link-shadow" href="#">Read Less</a>
+        </p>
+        <a class="buy" href="javascript:app.confirmBuy({{json this}})">Buy</a>
      </div>
     {{/each}}
   {{/if }}

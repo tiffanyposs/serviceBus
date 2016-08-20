@@ -6,6 +6,9 @@ var bodyParser = require('body-parser');
 // var bus = require('servicebus').bus();
 var favicon = require('serve-favicon');
 var hbs = require('hbs');
+var json = require('hbs-json');
+ 
+
 var logger = require('morgan');
 var modules = require('./modules/global');
 
@@ -44,6 +47,9 @@ app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
 // partials
 hbs.registerPartials(__dirname + '/views/partials');
+
+// use json
+hbs.registerHelper('json', json);
 
 // homepage
 app.get('/', function(req, res) {

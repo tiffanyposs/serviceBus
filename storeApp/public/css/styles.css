@@ -5,6 +5,13 @@ body, html {
 .flex-row {
 	display: flex;
 	flex-direction: row;
+	align-items: flex-start;
+}
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
 
 .flex-row.flex-wrap {
@@ -19,14 +26,22 @@ body, html {
 	display: none;
 }
 
+a.link-shadow:focus, a.link-shadow:hover, .link-shadow a:focus, .link-shadow a:hover {
+	text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.5);
+}
+
+
+.btn {
+
+}
+
+
 header {
 	justify-content: flex-end;
 	width: 100%;
 	height: 100px;
 	background-color: #0091FF;
 }
-
-
 
 header .nav-bar > ul{
 	margin-right: 20px;
@@ -44,11 +59,6 @@ header .nav-bar li a {
 
 }
 
-header .nav-bar li a:hover, header .nav-bar li a:focus {
-	text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-}
-
-
 .product-tile {
 	width: 30%;
 	padding: 30px;
@@ -57,9 +67,29 @@ header .nav-bar li a:hover, header .nav-bar li a:focus {
 	margin: 20px;
 	color: #fff;
 	border-radius: 30px;
+	/*justify-content: flex-start;*/
+	/*align-content: flex-start;*/
 }
+
+
+.product-tile .show-hide-description {
+	color: #fff;
+}
+
+
 
 .product-tile > img {
 	width: 100%;
 	border-radius: 30px;
+	max-width: 350px;
+	flex-basis: 350px;
 }
+
+.product-tile button {
+	/*display: block;*/
+}
+
+.product-tile .description .show-hide-description {
+	/*display: block;*/
+}
+

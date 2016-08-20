@@ -15,7 +15,9 @@
     "express-handlebars": "^3.0.0",
     "express-json": "^1.0.0",
     "handlebars": "^4.0.5",
+    "handlebars-json": "^1.0.0",
     "hbs": "^4.0.0",
+    "hbs-json": "^0.1.1",
     "serve-favicon": "^2.3.0",
     "servicebus": "^2.0.3"
   },
