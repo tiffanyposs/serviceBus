@@ -1,11 +1,16 @@
-<div>
+<div class="products flex-row flex-wrap flex-center">
 
   {{#if products.data }}
     {{#each products.data}}
-    	<img src="{{image}}" alt="">
+     <div class="product-tile">
+    	<img src="{{imagePath}}" alt="{{name}}">
         <h3>{{ name }}</h3>
-        <p>{{ description }}</p>
-        <p>{{ price }}</p>
+        <p>${{ price }}</p>
+        <a class="show-hide-description" href="#">Read More</a>
+        <a class="hide show-hide-description" href="#">Read Less</a>
+        <p class="description hide">{{ description }}</p>
+     </div>
     {{/each}}
   {{/if }}
+
 </div>

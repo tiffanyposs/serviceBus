@@ -7,8 +7,20 @@ body, html {
 	flex-direction: row;
 }
 
+.flex-row.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-center {
+	justify-content: center;
+}
+
+.hide {
+	display: none;
+}
+
 header {
-	display: inline-block;
+	justify-content: flex-end;
 	width: 100%;
 	height: 100px;
 	background-color: #0091FF;
@@ -17,7 +29,6 @@ header {
 
 
 header .nav-bar > ul{
-	justify-content: flex-end;
 	margin-right: 20px;
 }
 
@@ -35,4 +46,20 @@ header .nav-bar li a {
 
 header .nav-bar li a:hover, header .nav-bar li a:focus {
 	text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+.product-tile {
+	width: 30%;
+	padding: 30px;
+	max-width: 350px;
+	background-color: #0091FF;
+	margin: 20px;
+	color: #fff;
+	border-radius: 30px;
+}
+
+.product-tile > img {
+	width: 100%;
+	border-radius: 30px;
 }
