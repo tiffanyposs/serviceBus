@@ -1,8 +1,38 @@
-h1 {
-	color: red;
+body, html {
+	font-family: 'Hind Guntur', sans-serif;
 }
 
-header > div {
-	/*height: 150px;*/
-	background-color: lightblue;
+.flex-row {
+	display: flex;
+	flex-direction: row;
+}
+
+header {
+	display: inline-block;
+	width: 100%;
+	height: 100px;
+	background-color: #0091FF;
+}
+
+
+
+header .nav-bar > ul{
+	justify-content: flex-end;
+	margin-right: 20px;
+}
+
+header .nav-bar li {
+	align-self: flex-end;
+	list-style: none;
+	padding: 10px;
+}
+
+header .nav-bar li a {
+	color: white;
+	text-decoration: none;
+
+}
+
+header .nav-bar li a:hover, header .nav-bar li a:focus {
+	text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }

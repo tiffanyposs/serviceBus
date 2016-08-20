@@ -10,11 +10,13 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.15.2",
+    "define": "^1.0.1",
     "express": "^4.14.0",
     "express-handlebars": "^3.0.0",
     "express-json": "^1.0.0",
     "handlebars": "^4.0.5",
     "hbs": "^4.0.0",
+    "serve-favicon": "^2.3.0",
     "servicebus": "^2.0.3"
   },
   "devDependencies": {

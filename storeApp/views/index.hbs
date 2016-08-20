@@ -1,1 +1,11 @@
-<h1>Example App: Home</h1>
+<div>
+
+  {{#if products.data }}
+    {{#each products.data}}
+    	<img src="{{image}}" alt="">
+        <h3>{{ name }}</h3>
+        <p>{{ description }}</p>
+        <p>{{ price }}</p>
+    {{/each}}
+  {{/if }}
+</div>

@@ -1,4 +1,7 @@
 var fs = require("fs");
+var define = require('define');
+var modules = require('./modules/global');
+
 
 var express = require('express');
 var app = express();
@@ -6,7 +9,7 @@ var app = express();
 // var json = require('express-json');
 var bodyParser = require('body-parser');
 // var bus = require('servicebus').bus();
-
+var favicon = require('serve-favicon');
 
 // var handlebars = require('express-handlebars');
 var hbs = require('hbs');
@@ -19,6 +22,16 @@ app.use(bodyParser.json());       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 })); 
+
+//include
+// eval(fs.readFileSync('./modules/readJson.js')+'');
+// var json = getConfig('public/data/itemsToBuy.json');
+// console.log(json);
+
+// var getJson = require('./modules/readJson.js');
+// console.log(getJson)
+// var json = getJson.getConfig('../public/data/itemsToBuy.json');
+// console.log(json);
 
 
 
@@ -39,11 +52,25 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.static('public/css'));
 app.use(express.static('public/javascript'));
 app.use(express.static('public/data'));
+app.use(express.static('/public/images'));
 
+
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
+
+
+
+
+
+//assume that config.json is in application root
+
+// var json = getConfig('public/data/itemsToBuy.json');
+// console.log(json);
 
 
 app.get('/', function(req, res) {
-  res.render('index');
+  var products = modules.readJson('./public/data/itemsToBuy.json');
+  // console.log(json);
+  res.render('index', { products: products } );
 });
 
 
